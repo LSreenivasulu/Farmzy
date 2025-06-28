@@ -1,0 +1,46 @@
+.auth-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: none;
+}
+
+.btn-gradient {
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 10px;
+  border-radius: 25px;
+  transition: 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(to right, #43e97b, #38f9d7);
+  color: white;
+}
+
+.active-btn {
+  font-weight: bold;
+  border-width: 2px !important;
+}
+
+body {
+  background: #f8f9fa;
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
+}
+
+.active-btn {
+  background-color: #0d6efd !important;
+  color: white !important;
+}
+.auth-bg {
+  background-image: url('https://wallpapers.com/images/high/agriculture-pictures-cie869km9f7a9itq.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+

@@ -1,0 +1,62 @@
+.container {
+  background-color: #f8f9fa;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+button {
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+/* Rainbow border for product card */
+.rainbow-border {
+  border: 3px solid;
+  border-image: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet) 1;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Fancy animated title */
+.farmzy-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff6a00, #ffb800, #00ff88, #00c3ff, #c300ff, #ff0077);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowShift 6s linear infinite;
+}
+
+@keyframes rainbowShift {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* Gradient text for product name */
+.text-gradient {
+  background: linear-gradient(45deg, #007bff, #00c851);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Button gradient */
+.btn-gradient {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  border: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn-gradient:hover {
+  transform: scale(1.05);
+}
+
+/* Product image style */
+.product-image {
+  max-height: 300px;
+  object-fit: contain;
+}
+

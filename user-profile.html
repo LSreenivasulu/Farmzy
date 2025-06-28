@@ -1,0 +1,53 @@
+<div class="container mt-5">
+  <!-- 🌈 Farmzy Title -->
+  <div class="text-center mb-4">
+    <h2 class="rainbow-title display-5 fw-bold">🌾 Farmzy - Order History</h2>
+    <h4 class="text-muted"><i class="bi bi-person-circle me-2"></i>👤 {{ user.name }}'s Profile</h4>
+  </div>
+
+  <!-- 🚫 No Orders -->
+  <div *ngIf="orderHistory.length === 0" class="alert alert-warning text-center shadow-sm">
+    🚫 No orders placed yet.
+  </div>
+
+  <!-- 🧾 Order Cards -->
+  <div *ngFor="let order of orderHistory" class="card mb-4 shadow-lg border-0 rounded-4">
+    <div class="card-header bg-gradient-light p-3 d-flex justify-content-between align-items-center">
+      <div class="fw-bold text-dark">
+        🆔 <span>Order ID: {{ order.orderId }}</span> |
+        📅 <span>Date: {{ order.orderDate | date: 'medium' }}</span> |
+        <span class="badge bg-info text-dark">Status: {{ order.status }}</span>
+      </div>
+      <button class="btn btn-outline-danger btn-sm" (click)="deleteOrder(order.orderId)">
+        🗑 Cancel Order
+      </button>
+    </div>
+
+    <div class="card-body bg-white">
+      <!-- 📍 Address -->
+      <div class="mb-3">
+        <h5 class="text-success mb-2">📍 Delivery Address:</h5>
+        <ul class="list-unstyled ms-3 text-muted">
+          <li>{{ order.address?.street }}</li>
+          <li>{{ order.address?.city }}, {{ order.address?.state }} - {{ order.address?.zipcode }}</li>
+          <li>{{ order.address?.country || 'India' }}</li>
+        </ul>
+      </div>
+
+      <!-- 🧺 Items -->
+      <div class="row gy-3" *ngFor="let item of order.items">
+        <div class="col-md-2 text-center">
+          <img [src]="item.imageUrl" alt="{{ item.productName }}"
+               class="img-thumbnail rounded shadow-sm"
+               (error)="item.imageUrl='assets/images/default.jpg'" />
+        </div>
+        <div class="col-md-10">
+          <h5 class="text-primary fw-semibold">{{ item.productName }}</h5>
+          <p class="mb-1"><strong>Price:</strong> ₹{{ item.price }}</p>
+          <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+        </div>
+        <hr class="my-2"/>
+      </div>
+    </div>
+  </div>
+</div>

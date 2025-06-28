@@ -1,0 +1,28 @@
+/* Gradient title effect */
+.text-gradient-title {
+  background: linear-gradient(45deg, #0072ff, #00c6ff, #17c671);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+/* Gradient button */
+.btn-gradient {
+  background: linear-gradient(to right, #00b09b, #96c93d);
+  color: white;
+  font-weight: bold;
+  border: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn-gradient:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 176, 155, 0.5);
+}
+
+/* Card enhancements */
+.card {
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 1rem;
+}

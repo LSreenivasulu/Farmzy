@@ -1,0 +1,36 @@
+.card {
+  border-radius: 1rem;
+}
+
+.card-header {
+  font-size: 0.95rem;
+}
+
+img {
+  max-height: 80px;
+  object-fit: cover;
+}
+/* Rainbow gradient title */
+.rainbow-title {
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom badge and border */
+.card-header {
+  background: linear-gradient(90deg, #f5f7fa, #c3cfe2);
+  border-radius: 1rem 1rem 0 0;
+}
+
+/* Card appearance */
+.card {
+  border-radius: 1rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+

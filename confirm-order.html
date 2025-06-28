@@ -1,0 +1,39 @@
+<div class="container mt-5">
+  <div class="text-center mb-4">
+    <h2 class="rainbow-title display-5 fw-bold">🌾 Farmzy – Confirm Your Order</h2>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <!-- Address Summary -->
+      <div class="card shadow mb-4 p-4">
+        <h4 class="text-primary mb-3">📦 Delivery Address</h4>
+        <p><strong>Street:</strong> {{ addressForm.value.street }}</p>
+        <p><strong>City:</strong> {{ addressForm.value.city }}</p>
+        <p><strong>State:</strong> {{ addressForm.value.state }}</p>
+        <p><strong>Pincode:</strong> {{ addressForm.value.pincode }}</p>
+      </div>
+
+      <!-- Product Summary -->
+      <div class="card shadow mb-4 p-4" *ngIf="product">
+        <h4 class="text-success mb-3">🛒 Product</h4>
+        <p><strong>Name:</strong> {{ product.name }}</p>
+        <p><strong>Quantity:</strong> {{ quantity }}</p>
+        <p><strong>Price:</strong> ₹{{ product.price }}</p>
+        <p><strong>Total:</strong> ₹{{ product.price * quantity }}</p>
+      </div>
+
+      <!-- Button / Success Message -->
+      <div class="text-center">
+        <button class="btn btn-gradient px-5 py-2 fs-5" (click)="placeOrder()" *ngIf="!orderPlaced">
+          ✅ Confirm & Place Order
+        </button>
+
+        <div *ngIf="orderPlaced" class="alert alert-success mt-4">
+          <p class="mb-3">🎉 Order placed successfully!</p>
+          <button class="btn btn-success" (click)="goToProfile()">Go to Profile</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

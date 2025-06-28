@@ -1,0 +1,29 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100 bg-light">
+  <div class="card shadow-lg p-5 rounded-4 w-100" style="max-width: 600px;">
+    <h2 class="text-center mb-4 text-gradient-title">🏠 Enter Delivery Address</h2>
+
+    <form (ngSubmit)="confirmAddress()" #addressForm="ngForm">
+      <div class="form-floating mb-3">
+        <input type="text" id="street" class="form-control" [(ngModel)]="address.street" name="street" required />
+        <label for="street">Street</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="text" id="city" class="form-control" [(ngModel)]="address.city" name="city" required />
+        <label for="city">City</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="text" id="state" class="form-control" [(ngModel)]="address.state" name="state" required />
+        <label for="state">State</label>
+      </div>
+
+      <div class="form-floating mb-4">
+        <input type="text" id="pincode" class="form-control" [(ngModel)]="address.pincode" name="pincode" required />
+        <label for="pincode">Pincode</label>
+      </div>
+
+      <button class="btn btn-gradient w-100 py-2">🚚 Confirm Address</button>
+    </form>
+  </div>
+</div>

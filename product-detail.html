@@ -1,0 +1,37 @@
+<div class="container mt-5" *ngIf="product">
+  <!-- 🌾 Farmzy Title -->
+  <h1 class="text-center fw-bold farmzy-title mb-5">🌿 Welcome to Farmzy - Product Details 🌾</h1>
+
+  <div class="row shadow-lg rounded-4 bg-white p-4 rainbow-border">
+    <!-- Product Image -->
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <img [src]="product.imageUrl"
+           alt="{{ product.name }}"
+           class="img-fluid border rounded-3 product-image"
+           (error)="product.imageUrl = 'assets/images/default.png'" />
+    </div>
+
+    <!-- Product Details -->
+    <div class="col-md-6">
+      <h2 class="fw-bold text-gradient">{{ product.name }}</h2>
+      <p class="text-muted fs-5">{{ product.description }}</p>
+      <h4 class="text-success">₹{{ product.price }}</h4>
+      <p><strong>Available Stock:</strong> <span class="text-dark">{{ product.stock }}</span></p>
+
+      <label for="quantity" class="form-label mt-3"><strong>Quantity:</strong></label>
+      <input type="number"
+             id="quantity"
+             class="form-control w-50 shadow-sm"
+             [(ngModel)]="quantity"
+             [min]="1"
+             [max]="product.stock"
+             required />
+
+      <button class="btn btn-gradient mt-4 px-4 py-2"
+              [routerLink]="['/order-address']"
+              [queryParams]="{ productId: product.id, qty: quantity }">
+        🛒 Order Now
+      </button>
+    </div>
+  </div>
+</div>

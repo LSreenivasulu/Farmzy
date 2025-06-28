@@ -1,0 +1,50 @@
+<div class="container mt-4">
+  <h2 class="text-success mb-4">🛒 Admin Product Management</h2>
+
+  <!-- Add Product Form -->
+  <div class="card p-3 mb-4 shadow-sm">
+    <h4>Add New Product</h4>
+    <form (ngSubmit)="addProduct()">
+      <div class="mb-2">
+        <input type="text" class="form-control" placeholder="Name" [(ngModel)]="newProduct.name" name="name" required />
+      </div>
+      <div class="mb-2">
+        <input type="text" class="form-control" placeholder="Description" [(ngModel)]="newProduct.description" name="description" required />
+      </div>
+      <div class="mb-2">
+        <input type="number" class="form-control" placeholder="Price" [(ngModel)]="newProduct.price" name="price" required />
+      </div>
+      <div class="mb-2">
+        <input type="number" class="form-control" placeholder="Stock" [(ngModel)]="newProduct.stock" name="stock" required />
+      </div>
+      <div class="mb-2">
+        <input type="text" class="form-control" placeholder="Image URL (e.g. assets/images/xyz.jpg)" [(ngModel)]="newProduct.imageUrl" name="imageUrl" />
+      </div>
+      <button class="btn btn-success" type="submit">➕ Add Product</button>
+    </form>
+  </div>
+
+  <!-- Product List with Inline Editing -->
+  <div class="card p-3 shadow-sm">
+    <h4>Edit Products</h4>
+    <div *ngFor="let product of products" class="border-bottom pb-2 mb-2">
+      <div class="row">
+        <div class="col-md-3">
+          <input class="form-control" [(ngModel)]="product.name" />
+        </div>
+        <div class="col-md-3">
+          <input class="form-control" [(ngModel)]="product.description" />
+        </div>
+        <div class="col-md-2">
+          <input class="form-control" type="number" [(ngModel)]="product.price" />
+        </div>
+        <div class="col-md-2">
+          <input class="form-control" type="number" [(ngModel)]="product.stock" />
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-sm btn-primary" (click)="updateProduct(product)">💾 Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
